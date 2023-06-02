@@ -1,11 +1,14 @@
 import React from 'react';
-import './App.css';
+import Header from './components/header/Header'
+import HotelsList from './components/hotels/HotelsList';
+import GlobalProvider from './context/GlobalContext';
 
 function App() {
   return (
-    <div >
-      
-    </div>
+    <GlobalProvider>
+      <Header />
+      <HotelsList />
+    </GlobalProvider>
   );
 }
 

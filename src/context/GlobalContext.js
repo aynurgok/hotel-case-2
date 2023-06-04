@@ -9,6 +9,7 @@ const GlobalProvider = ({children}) => {
     //otelleri listeleyeceğim bu state e tutturacağım.
     const [hotels, setHotels] = useState([])
     const [loading, setLoading] = useState(true)
+    const [newHotel, setNewHotel] = useState("")
 
     function addDot(val) {
         let division = Number(val / 10);
@@ -19,12 +20,25 @@ const GlobalProvider = ({children}) => {
           return division
         }
     }
+
+    function handleAddHotel() {
+        setNewHotel(console.log("df"))
+    }
+
+    function deleteHotel(hotelId) {
+        const updateHotel = hotels.filter((otel) => otel.id !== hotelId)
+        setHotels(updateHotel)
+    }
     const data = {
         hotels,
         setHotels,
         addDot,
         loading,
-        setLoading
+        setLoading,
+        deleteHotel,
+        newHotel,
+        setNewHotel,
+        handleAddHotel
     }
     useEffect(() => {
         axios.get('/data/hotels.json')
@@ -37,7 +51,6 @@ const GlobalProvider = ({children}) => {
     }, [])
 
     
-
     return(
         <GlobalContext.Provider value={data}>
             {children}

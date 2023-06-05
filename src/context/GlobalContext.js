@@ -1,4 +1,4 @@
-import { createContext,useState, useEffect} from "react";
+import React, { createContext,useState, useEffect} from "react";
 import {getHotels, deleteHotels} from '../services/hotelServices';
 
 export const GlobalContext = createContext()
@@ -8,7 +8,8 @@ const GlobalProvider = ({children}) => {
     const [hotels, setHotels] = useState([])
     const [loading, setLoading] = useState(true)
     const [newHotel, setNewHotel] = useState("")
-
+    const [open, setOpen] = useState(false);
+  
     function addDot(val) {
         let division = Number(val / 10);
         let check = division.toString();
@@ -45,7 +46,9 @@ const GlobalProvider = ({children}) => {
         deleteHotel,
         newHotel,
         setNewHotel,
-        handleAddHotel
+        handleAddHotel,
+        open,
+        setOpen,
     }
 
     useEffect(() => {

@@ -1,38 +1,6 @@
 {
   "hotels": [
     {
-      "id": 1,
-      "ad": "Paradise Hotel",
-      "puan": 30,
-      "lokasyon": "Brezilya",
-      "total": 900,
-      "img": "https://images.unsplash.com/photo-1600607688969-a5bfcd646154?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80"
-    },
-    {
-      "id": 2,
-      "ad": "Shingle Hotel",
-      "puan": 60,
-      "lokasyon": "Sri Lanka",
-      "total": 3700,
-      "img": "https://images.unsplash.com/photo-1565297032488-90722f09db62?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80"
-    },
-    {
-      "id": 3,
-      "ad": "Banghalore Hotel",
-      "puan": 20,
-      "lokasyon": "Bangladeş",
-      "total": 1500,
-      "img": "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80"
-    },
-    {
-      "id": 4,
-      "ad": "Voyage Hotel",
-      "puan": 90,
-      "lokasyon": "Israel",
-      "total": 400,
-      "img": "https://images.unsplash.com/photo-1566908829550-e6551b00979b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=869&q=80"
-    },
-    {
       "id": 5,
       "ad": "Rixos Hotel",
       "puan": 50,

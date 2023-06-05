@@ -13,6 +13,8 @@
     padding:10px 0;
     text-align: center;
     margin-bottom:20px;
+    font-weight: 500;
+    color: #66a1c9;
 }
 .main-hotel-box .container {
     max-width: 800px;

@@ -1,9 +1,7 @@
 import { createContext,useState, useEffect} from "react";
-import axios from 'axios';
+import {getHotels, deleteHotels} from '../services/hotelServices';
 
 export const GlobalContext = createContext()
-
-
 
 const GlobalProvider = ({children}) => {
     //otelleri listeleyeceğim bu state e tutturacağım.
@@ -25,10 +23,19 @@ const GlobalProvider = ({children}) => {
         setNewHotel(console.log("df"))
     }
 
-    function deleteHotel(hotelId) {
-        const updateHotel = hotels.filter((otel) => otel.id !== hotelId)
-        setHotels(updateHotel)
-    }
+    const deleteHotel = async (hotelId,event) => {
+      try {
+        setLoading(true)
+        event.preventDefault()  //tamam çalışayım senin vaktini almiyim daha fazla :Ç))))
+        deleteHotels(hotelId)
+        .then(() => {
+          const updatedHotels = hotels.filter((hotel) => hotel.id !== hotelId);
+          setHotels(updatedHotels);
+        })
+      } catch (error) {
+        console.error('Otel silinirken bir hata oluştu:', error);
+      }
+    };
     const data = {
         hotels,
         setHotels,
@@ -40,8 +47,9 @@ const GlobalProvider = ({children}) => {
         setNewHotel,
         handleAddHotel
     }
+
     useEffect(() => {
-        axios.get('/data/hotels.json')
+      getHotels()
         .then(response => {
             setHotels(response.data);
           })

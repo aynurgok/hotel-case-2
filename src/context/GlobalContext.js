@@ -36,6 +36,7 @@ const GlobalProvider = ({children}) => {
       icon: 'error'
     })
    }
+ 
 
     const deleteHotel = async (hotelId,event) => {
       try {
@@ -59,7 +60,6 @@ const GlobalProvider = ({children}) => {
         deleteHotel,
         newHotel,
         setNewHotel,
-        handleAddHotel,
         open,
         setOpen,
         modalText,

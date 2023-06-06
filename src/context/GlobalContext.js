@@ -1,5 +1,7 @@
 import React, { createContext,useState, useEffect} from "react";
 import {getHotels, deleteHotels} from '../services/hotelServices';
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
 
 export const GlobalContext = createContext()
 
@@ -21,14 +23,24 @@ const GlobalProvider = ({children}) => {
         }
     }
 
-    function handleAddHotel() {
-        setNewHotel(console.log("df"))
-    }
+    const MySwal = withReactContent(Swal)
+    let openSweet = function() {
+    MySwal.fire({
+      title: <strong>Başarıyla kaydedildi</strong>,
+      icon: 'success'
+    })
+   }
+   let sweetDelete = function() {
+    MySwal.fire({
+      title: <strong>Silindi</strong>,
+      icon: 'error'
+    })
+   }
 
     const deleteHotel = async (hotelId,event) => {
       try {
         setLoading(true)
-        event.preventDefault()  //tamam çalışayım senin vaktini almiyim daha fazla :Ç))))
+        event.preventDefault() 
         deleteHotels(hotelId)
         .then(() => {
           const updatedHotels = hotels.filter((hotel) => hotel.id !== hotelId);
@@ -51,7 +63,9 @@ const GlobalProvider = ({children}) => {
         open,
         setOpen,
         modalText,
-        setModalText
+        setModalText,
+        openSweet,
+        sweetDelete
     }
 
     useEffect(() => {

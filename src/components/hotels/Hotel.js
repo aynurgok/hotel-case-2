@@ -6,7 +6,7 @@ import {HiOutlineLocationMarker} from 'react-icons/hi'
 
 
 function Hotel() {
-    const {hotels, addDot, deleteHotel, loading} = useContext(GlobalContext)
+    const {hotels, addDot, deleteHotel, loading, setOpen, modalText, setModalText} = useContext(GlobalContext)
   return (
     <>
       {hotels.map(hotel => (
@@ -48,10 +48,13 @@ function Hotel() {
               <div className='check'>
                     <div className='flex'>
                       <p className='total'>Price:</p>
-                      <p className='total'>${hotel.total}</p>
+                      <p className='total'>${hotel.price}</p>
                     </div>
                     <div className='flex'>
-                      <button id="edit" data-id={hotel.id}>Düzenle</button>  
+                      <button id="edit" data-id={hotel.id} onClick={() => {
+                        setOpen(true);
+                        setModalText('Edit Hotel');
+                      }}>Düzenle</button>  
                       <button id="delete" data-id={hotel.id} onClick={(event) => deleteHotel(hotel.id, event)}>Sil</button>
 
                     </div>

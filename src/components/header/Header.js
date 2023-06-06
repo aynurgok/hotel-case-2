@@ -4,14 +4,17 @@ import { GlobalContext } from '../../context/GlobalContext';
 import './style.css'
 
 function Header() {
-  const { setOpen } = useContext(GlobalContext);
-
+  const {setOpen, setModalText, modalText} = useContext(GlobalContext);
+ 
   return (
     <header>
       <div className="container">
         <div className="header">
           <p className="title">Frontend Hotel Case</p>
-          <Button variant="outlined" onClick={(() => setOpen(true))}>
+          <Button variant="outlined" onClick={(() => {
+            setOpen(true)
+            setModalText('Add Hotel');
+          })}>
             Otel Ekle
           </Button>
         </div>

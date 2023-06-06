@@ -4,37 +4,48 @@ import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
+import FormControl from '@mui/material/FormControl'
 import DialogContent from '@mui/material/DialogContent';
-import DialogContentText from '@mui/material/DialogContentText';
+import CssBaseline from '@mui/material/CssBaseline';
+import Box from '@mui/material/Box';
+import Container from '@mui/material/Container';
 import DialogTitle from '@mui/material/DialogTitle';
+import './modal.css'
 
 export default function FormDialog() {
-  const { open, setOpen} = useContext(GlobalContext);
+  const {open, setOpen, modalText} = useContext(GlobalContext);
 
-  return (
-    <div>
-      <Dialog open={open} onClose={() => setOpen(false)}>
-        <DialogTitle>Subscribe</DialogTitle>
-        <DialogContent>
-          <DialogContentText>
-            To subscribe to this website, please enter your email address here. We
-            will send updates occasionally.
-          </DialogContentText>
-          <TextField
-            autoFocus
-            margin="dense"
-            id="name"
-            label="Email Address"
-            type="email"
-            fullWidth
-            variant="standard"
-          />
-        </DialogContent>
+
+  return (        
+    <>
+      <Dialog className="modal" open={open} onClose={() => setOpen(false)}>
+        <DialogTitle>{modalText}</DialogTitle>
+        <Container  sx={{
+          display: "flex",
+          flexDirection: "column",
+          gap: "20px"
+        }}>
+          <FormControl>
+            <TextField fullWidth label={modalText=="Add Hotel" ? "Name" : "{data.name}"} id="fullWidth" />
+          </FormControl>
+          <FormControl>
+            <TextField fullWidth label="Point" id="fullWidth" />
+          </FormControl>
+          <FormControl>
+            <TextField fullWidth label="Location" id="fullWidth" />
+          </FormControl>
+          <FormControl>
+            <TextField fullWidth label="Price" id="fullWidth" />
+          </FormControl>
+          <FormControl>
+            <TextField fullWidth label="IMG URL" id="fullWidth" />
+          </FormControl>
+        </Container>
         <DialogActions>
           <Button onClick={() => setOpen(false)}>Cancel</Button>
-          <Button onClick={() => setOpen(false)}>Subscribe</Button>
+          <Button onClick={() => setOpen(false)}>SAVE</Button>
         </DialogActions>
       </Dialog>
-    </div>
+    </>
   );
 }

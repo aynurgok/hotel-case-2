@@ -9,7 +9,8 @@ const GlobalProvider = ({children}) => {
     const [loading, setLoading] = useState(true)
     const [newHotel, setNewHotel] = useState("")
     const [open, setOpen] = useState(false);
-  
+    const [modalText, setModalText] = useState("Ekle");
+
     function addDot(val) {
         let division = Number(val / 10);
         let check = division.toString();
@@ -49,6 +50,8 @@ const GlobalProvider = ({children}) => {
         handleAddHotel,
         open,
         setOpen,
+        modalText,
+        setModalText
     }
 
     useEffect(() => {

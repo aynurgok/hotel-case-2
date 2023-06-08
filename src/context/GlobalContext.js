@@ -9,7 +9,7 @@ const GlobalProvider = ({children}) => {
     //otelleri listeleyeceğim bu state e tutturacağım.
     const [hotels, setHotels] = useState([])
     const [loading, setLoading] = useState(true)
-    const [newHotel, setNewHotel] = useState("")
+    const [newHotel, setNewHotel] = useState([])
     const [open, setOpen] = useState(false);
     const [modalText, setModalText] = useState("Ekle");
 
@@ -51,6 +51,7 @@ const GlobalProvider = ({children}) => {
         console.error('Otel silinirken bir hata oluştu:', error);
       }
     };
+
     const data = {
         hotels,
         setHotels,

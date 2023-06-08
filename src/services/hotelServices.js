@@ -8,6 +8,6 @@ export const deleteHotels =  (hotelId,e) => {
   return API.delete(`/hotels/${hotelId}`)
 }
 
-export const addHotel = () => {
-    return API.post(`hotels/`)
-}
+// export const addHotel = () => {
+//     return API.post(`hotels/`, {post})
+// }

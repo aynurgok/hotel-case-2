@@ -1,7 +1,8 @@
 import React, { createContext,useState, useEffect} from "react";
-import {getHotels, deleteHotels} from '../services/hotelServices';
+import {getHotels, deleteHotels, addHotel} from '../services/hotelServices';
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
+
 
 export const GlobalContext = createContext()
 
@@ -9,9 +10,17 @@ const GlobalProvider = ({children}) => {
     //otelleri listeleyeceğim bu state e tutturacağım.
     const [hotels, setHotels] = useState([])
     const [loading, setLoading] = useState(true)
-    const [newHotel, setNewHotel] = useState([])
     const [open, setOpen] = useState(false);
     const [modalText, setModalText] = useState("Ekle");
+
+    // add hotel
+
+    const [name, setName] = useState("")
+    const [point, setPoint] = useState("")
+    const [location, setLocation] = useState("")
+    const [price, setPrice] = useState("")
+    const [img, setImg] = useState("")
+    
 
     function addDot(val) {
         let division = Number(val / 10);
@@ -59,14 +68,32 @@ const GlobalProvider = ({children}) => {
         loading,
         setLoading,
         deleteHotel,
-        newHotel,
-        setNewHotel,
         open,
         setOpen,
         modalText,
         setModalText,
         openSweet,
-        sweetDelete
+        sweetDelete,
+        name,
+        setName,
+        point,
+        setPoint,
+        price,
+        setPrice,
+        location,
+        setLocation,
+        img,
+        setImg,
+        // handleSubmit,
+        // hotelData
+        hotelData :{
+          name: name,
+          point:point,
+          location:location,
+          img:img,
+          price:price
+        }
+      
     }
 
     useEffect(() => {

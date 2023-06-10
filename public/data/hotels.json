@@ -1,14 +1,6 @@
 {
   "hotels": [
     {
-      "id": 2,
-      "ad": "Shingle Hotel",
-      "puan": 60,
-      "lokasyon": "Sri Lanka",
-      "price": 3700,
-      "img": "https://images.unsplash.com/photo-1565297032488-90722f09db62?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80"
-    },
-    {
       "id": 3,
       "ad": "Banghalore Hotel",
       "puan": 20,
@@ -38,6 +30,46 @@
       "puan": 60,
       "price": 400,
       "img": "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80"
+    },
+    {
+      "name": "dsd",
+      "point": "dada",
+      "location": "sadas",
+      "img": "dsa",
+      "price": "sad",
+      "id": 7
+    },
+    {
+      "name": "da",
+      "point": "da",
+      "location": "dsa",
+      "img": "das",
+      "price": "das",
+      "id": 8
+    },
+    {
+      "name": "dad",
+      "point": "da",
+      "location": "dasd",
+      "img": "https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
+      "price": "das",
+      "id": 9
+    },
+    {
+      "name": "dsdasda",
+      "point": "8",
+      "location": "dasda",
+      "img": "https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
+      "price": "6",
+      "id": 10
+    },
+    {
+      "name": "da",
+      "point": "-4",
+      "location": "dsd",
+      "img": "s",
+      "price": "4",
+      "id": 11
     }
   ]
 }
